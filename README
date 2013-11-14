@@ -1,0 +1,6 @@
+DyCoNet is a Gephi plugin that can be used to identify dynamic communities in networks. To add DyCoNet to an existing Gephi installation:
+1. Download DyCoNet.nbm.
+2. Open Gephi.
+3. Go to the menu Tools > Plugins > Downloaded.
+4. Click on Add Plugins..., and select DyCoNet.nbm.
+5. Click on Install and follow the installation wizard.
