@@ -37,6 +37,8 @@ public class FindDynamicCommunitiesUI implements StatisticsUI
             panel.setSwitchCost(dynamicCommunitiesStatistic.getSwitchCost());
             panel.setExecuteTBW(dynamicCommunitiesStatistic.getExecuteTBW());
             panel.setTimeParameter(dynamicCommunitiesStatistic.getTimeParameter());
+            panel.setCutoffParameter(dynamicCommunitiesStatistic.getCutoffParameter());
+            panel.setChosenDirectoryString(dynamicCommunitiesStatistic.getChosenDirectoryString());
         }
     }
 
@@ -50,6 +52,8 @@ public class FindDynamicCommunitiesUI implements StatisticsUI
             dynamicCommunitiesStatistic.setAbsentCost(panel.getAbsentCost());
             dynamicCommunitiesStatistic.setExecuteTBW(panel.getExecuteTBW());
             dynamicCommunitiesStatistic.setTimeParameter(panel.getTimeParameter());
+            dynamicCommunitiesStatistic.setCutoffParameter(panel.getCutoffParameter());
+            dynamicCommunitiesStatistic.setChosenDirectoryString(panel.getChosenDirectoryString());
             settings.save(dynamicCommunitiesStatistic);
         }
         panel = null;
@@ -87,6 +91,8 @@ public class FindDynamicCommunitiesUI implements StatisticsUI
         private double absentCost=1;
         private int timeParameter=1;
         private Boolean executeTBW=Boolean.TRUE;
+        private double cutoffParameter = 0.4;
+        private String chosenDirectoryString;
 
         private void save(FindDynamicCommunities stat) 
         {
@@ -95,6 +101,8 @@ public class FindDynamicCommunitiesUI implements StatisticsUI
             this.absentCost = stat.getAbsentCost();
             this.executeTBW = stat.getExecuteTBW();
             this.timeParameter = stat.getTimeParameter();
+            this.cutoffParameter = stat.getCutoffParameter();
+            this.chosenDirectoryString = stat.getChosenDirectoryString();
         }
 
         private void load(FindDynamicCommunities stat) 
@@ -104,6 +112,8 @@ public class FindDynamicCommunitiesUI implements StatisticsUI
             stat.setAbsentCost(absentCost);
             stat.setExecuteTBW(executeTBW);
             stat.setTimeParameter(timeParameter);
+            stat.setCutoffParameter(cutoffParameter);
+            stat.setChosenDirectoryString(chosenDirectoryString);
         }
     }
 }

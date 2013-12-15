@@ -5,7 +5,10 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -26,9 +29,13 @@ public class FindDynamicCommunitiesPanel extends javax.swing.JPanel
     private JFormattedTextField absentCostTextField;
     private JFormattedTextField switchCostTextField;
     private JFormattedTextField timeParameterTextField;
+    private JFormattedTextField cutoffParameterTextField;
+    private JTextField chosenDirectoryTextField;
     private JXHeader header;
     private JRadioButton subCommunityModelButton;
     private JRadioButton costModelButton;
+    //private String chosenDirectoryString;
+    private FileChooserListener fcListener;
     
     public FindDynamicCommunitiesPanel()
     {   initComponents();}
@@ -85,6 +92,23 @@ public class FindDynamicCommunitiesPanel extends javax.swing.JPanel
         }
     }
     
+    public double getCutoffParameter()
+    {
+        try
+        {
+            return Double.parseDouble(cutoffParameterTextField.getText());
+        } catch(Exception e)
+        {
+            return 0.4;
+        }
+    }
+    
+    public String getChosenDirectoryString()
+    {
+        //return fcListener.getDirectoryName();
+        return chosenDirectoryTextField.getText();
+    }
+    
     public void setVisitCost(double visitCost)
     {   visitCostTextField.setText(Double.toString(visitCost));}
     
@@ -105,17 +129,34 @@ public class FindDynamicCommunitiesPanel extends javax.swing.JPanel
     public void setTimeParameter(int timeParam)
     {   timeParameterTextField.setText(Integer.toString(timeParam));}
     
+    public void setCutoffParameter(double cutoffParam)
+    {   cutoffParameterTextField.setText(Double.toString(cutoffParam));}
+    
+    public void setChosenDirectoryString(String str)
+    {   chosenDirectoryTextField.setText(str);}
+    
     private void initComponents()
     { 
-        visitCostTextField     = new JFormattedTextField(new Double(1.0));
-        absentCostTextField    = new JFormattedTextField(new Double(1.0));
-        switchCostTextField    = new JFormattedTextField(new Double(1.0));
-        timeParameterTextField = new JFormattedTextField(new Integer(1));
+        visitCostTextField       = new JFormattedTextField(new Double(1.0));
+        absentCostTextField      = new JFormattedTextField(new Double(1.0));
+        switchCostTextField      = new JFormattedTextField(new Double(1.0));
+        timeParameterTextField   = new JFormattedTextField(new Integer(1));
+        cutoffParameterTextField = new JFormattedTextField(new Double(0.4));
+        chosenDirectoryTextField = new JTextField(" ");
         header              = new JXHeader();
         JLabel visitLabel   = new JLabel("Visiting cost:");
         JLabel absentLabel  = new JLabel("Absence cost:");
         JLabel switchLabel  = new JLabel("Switching cost:");
         JLabel timeLabel    = new JLabel("Search parameter");   
+        JLabel cutoffLabel = new JLabel("Jaccard cutoff parameter");
+        
+        JButton fileChooserButton = new JButton("Choose file directory");
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        fcListener = new FileChooserListener(fileChooser, chosenDirectoryTextField);
+        fileChooserButton.addActionListener(fcListener);
+        
+        
         
         String subCommunityNetworkString = "sub-community model";
         String costNetworkString         = "cost model";
@@ -143,6 +184,10 @@ public class FindDynamicCommunitiesPanel extends javax.swing.JPanel
         timeLabel.setToolTipText("<html>This parameter sets the number of timesteps included"
                                  + "<br>in the search for a possible earlier instance of a"
                                  + "<br>given community.</html>");
+        cutoffLabel.setToolTipText("<html>This parameter sets the minimum value for the Jaccard "
+                                 + "<br>Index that will be accepted for two groups to be considered"
+                                 + "<br>part of the same community. A higher number requires two"
+                                 + "<br>groups to me more similar. This parameter must be between 0 and 1.</html>");
         
         //ActionListener for RadioButtons
         RadioListener listener = new RadioListener(visitCostTextField, switchCostTextField, absentCostTextField, visitLabel, switchLabel, absentLabel);
@@ -171,7 +216,7 @@ public class FindDynamicCommunitiesPanel extends javax.swing.JPanel
         switchLabel.setHorizontalAlignment(JLabel.CENTER);
         timeLabel.setHorizontalAlignment(JLabel.CENTER);
         
-        costPanel.setLayout(new GridLayout(4,4));
+        costPanel.setLayout(new GridLayout(7,4));
         costPanel.add(new JLabel());
         costPanel.add(visitLabel);
         costPanel.add(visitCostTextField);
@@ -188,11 +233,55 @@ public class FindDynamicCommunitiesPanel extends javax.swing.JPanel
         costPanel.add(timeLabel);
         costPanel.add(timeParameterTextField);
         costPanel.add(new JLabel());
+        costPanel.add(new JLabel());
+        costPanel.add(cutoffLabel);
+        costPanel.add(cutoffParameterTextField);
+        costPanel.add(new JLabel());
+        costPanel.add(new JLabel());
+        costPanel.add(new JLabel());
+        costPanel.add(new JLabel());
+        costPanel.add(new JLabel());
+        costPanel.add(new JLabel());
+        costPanel.add(fileChooserButton);
+        costPanel.add(chosenDirectoryTextField);
+        costPanel.add(new JLabel());
         
         this.add(header, BorderLayout.NORTH);
         this.add(panelOfButtons, BorderLayout.WEST);
         this.add(costPanel, BorderLayout.EAST);
     } 
+}
+
+
+class FileChooserListener implements ActionListener
+{
+    private JFileChooser fc;
+    public String directoryName;
+    JTextField directoryNameTextField;
+    
+    public FileChooserListener(JFileChooser chooser, JTextField textField)
+    {
+        this.fc = chooser;
+        //directoryName = "";
+        this.directoryNameTextField = textField;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) 
+    {
+        int returnVal = fc.showOpenDialog(null);
+        if(returnVal == JFileChooser.APPROVE_OPTION)
+        {
+            File chosenDirectory = fc.getSelectedFile();
+            directoryName = chosenDirectory.getAbsolutePath();
+            directoryNameTextField.setText(directoryName);
+        }
+    }
+    
+    public String getDirectoryName()
+    {
+        return directoryName;
+    }   
 }
 
 class RadioListener implements ActionListener

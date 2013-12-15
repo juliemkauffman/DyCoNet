@@ -46,9 +46,11 @@ public final class MatchedGroupGraph
     int currentHighestColorID;
     int timeParameter;
     String report;
+    double cutoffParameter;
     
-    public MatchedGroupGraph(GroupStructure[] groupStructure, GraphModel graphModel, int timeParam)
+    public MatchedGroupGraph(GroupStructure[] groupStructure, GraphModel graphModel, int timeParam, double cutoffParam)
     {   
+        cutoffParameter = cutoffParam;
         timeParameter = timeParam;
         DynamicController dc = Lookup.getDefault().lookup(DynamicController.class);   
         DynamicModel dynamicGraphModel = dc.getModel();
@@ -91,7 +93,7 @@ public final class MatchedGroupGraph
             {
                 Group  earlierGroup    = groupArrayInEarlierTimeStep[earlierGroupIndex];
                 double similarityIndex = this.calculateJaccard(currentGroup, earlierGroup);
-                if(similarityIndex >= .4)   //Different thresholds can be tested
+                if(similarityIndex >= cutoffParameter)   
                 {
                     PriorityQueueElement newElement = new PriorityQueueElement(earlierGroup, currentGroupIndex, similarityIndex);
                     currentGroup.priorityQueue.add(newElement);            

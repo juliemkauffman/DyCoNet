@@ -1,12 +1,17 @@
 package kcl.julie.DynamicCommunityIdentificationPlugin;
 
 import java.awt.Color;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.gephi.data.attributes.api.AttributeColumn;
 import org.openide.util.Lookup;
 import org.gephi.data.attributes.api.AttributeModel;
@@ -52,6 +57,8 @@ public class FindDynamicCommunities implements Statistics
     public static double costVisit = 1;
     public static double costAbsent = 1;
     public static int timeParameter = 1;
+    public static double cutoffParameter = 0.4;
+    public static String chosenDirectoryString = "";
     public static final String DYNAMIC_COMMUNITY = "Dynamic Community";
     public static final String NODE_PERSISTENCE = "Node Persistence";
     int[][]  arrayOfNodeColorsAtEachTimeStep;
@@ -93,8 +100,11 @@ public class FindDynamicCommunities implements Statistics
         
         nodeIdOffset = minNodeId - 1;
         
+        //!!!!
+        System.out.println("Cut off parameter is " + cutoffParameter);
+        
         GroupStructure[] groupStructure     = this.findGroupsAtEachTimeStep(graphModel, attributeModel);
-        MatchedGroupGraph matchedGroupGraph = new MatchedGroupGraph(groupStructure, graphModel, timeParameter); 
+        MatchedGroupGraph matchedGroupGraph = new MatchedGroupGraph(groupStructure, graphModel, timeParameter, cutoffParameter); 
         
         if(executeTBWForSocialNetwork)
         {
@@ -137,6 +147,12 @@ public class FindDynamicCommunities implements Statistics
     public void setTimeParameter(int timeParam)
     {   timeParameter = timeParam;}
     
+    public void setCutoffParameter(double cutoffParam)
+    {   cutoffParameter = cutoffParam;}
+    
+    public void setChosenDirectoryString(String str)
+    {   chosenDirectoryString = str;}
+    
     public double getSwitchCost()
     {   return costSwitch;}
     
@@ -151,6 +167,12 @@ public class FindDynamicCommunities implements Statistics
     
     public int getTimeParameter()
     {   return timeParameter;}
+    
+    public double getCutoffParameter()
+    {   return cutoffParameter;}
+    
+    public String getChosenDirectoryString()
+    {   return chosenDirectoryString;}
     
     //Uses Louvain modularity algorithm to detect communities at each time step
     public GroupStructure[] findGroupsAtEachTimeStep(GraphModel graphModel, AttributeModel attributeModel)
@@ -822,10 +844,99 @@ public class FindDynamicCommunities implements Statistics
                                 + " community indicated by the right number. The number in the last row indicates the number"
                                 + " of nodes in that same community or sub-community.</p>");
         }
-   
+        
+        //String buttonClickedString = "You clicked the button!";
+        //report = report.concat("<form>");
+        //report = report.concat("<br> <input type='button' value='Open as CSV file' onclick='JavaScript:alert(" + buttonClickedString +")'/>");
+        //report = report.concat("</form>");
+
         report = report.concat("</BODY></HTML>");
+        
+        
+        try {
+            this.createCSVFile(arrayOfNodeNames);
+        } catch (IOException ex) {
+            Logger.getLogger(FindDynamicCommunities.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-   
+
+    public void createCSVFile(String[] arrayOfNodeNames) throws IOException
+    {
+        System.out.println(chosenDirectoryString);
+        String nameOfNewFile = chosenDirectoryString.concat("\\Report.csv");
+        File file = new File(nameOfNewFile);
+        file.createNewFile();
+        FileWriter writer = new FileWriter(file);
+        
+        writer.append("Timestep \t");
+        
+        for(int index = 1; index < numberOfNodes+1; index++)
+        {
+           writer.append(arrayOfNodeNames[index] + "\t"); 
+        }
+        
+        writer.append("\n");
+        
+        for(int timeStep = (int)timeBegin; timeStep<(int)timeEnd; timeStep++)
+        {
+            writer.append(timeStep + "\t");
+            for(int i=1; i < numberOfNodes+1; i++)
+            {
+                int colorOfNode = arrayOfNodeColorsAtEachTimeStep[i][timeStep];
+                int colorOfGroup = arrayOfGroupColorsForAllNodes[i][timeStep];
+                if(colorOfNode == colorOfGroup)
+                    writer.append(colorOfNode + "\t");
+                else if(colorOfGroup==0)
+                {
+                    writer.append("(" + colorOfNode + ", - )\t");
+                }else                
+                    writer.append("(" + colorOfNode + "," + colorOfGroup + ")\t");
+            }
+            writer.append("\n");
+        }
+        
+        //When using cost model
+        if(executeTBWForSocialNetwork)
+        {
+            writer.append("Cost\t");
+            for(int index=1; index < arrayOfIndividualNodeCosts.length; index++)
+            {
+                writer.append(arrayOfIndividualNodeCosts[index] + "\t");
+            }
+            writer.append("\n");
+        }
+
+        //When not using cost model
+        else
+        {
+            writer.append("# of nodes\t");
+            for(int indx = 1; indx < numberOfNodes+1; indx++)
+            {
+                Boolean sameCommunityAlways = Boolean.TRUE;
+                for(int ts = (int) timeBegin + 1; ts < (int)timeEnd; ts++)
+                {
+                    if(arrayOfNodeColorsAtEachTimeStep[indx][ts]!=arrayOfNodeColorsAtEachTimeStep[indx][(int)timeBegin])
+                        sameCommunityAlways=Boolean.FALSE;
+     
+                }
+                if(sameCommunityAlways)
+                {
+                    int groupNumber = arrayOfNodeColorsAtEachTimeStep[indx][1];
+                    int numInCommunity = numberOfNodesInEachCommunity[groupNumber];
+                    writer.append(numInCommunity + "\t");
+                }
+                else
+                    writer.append("- \t");
+            }
+            writer.append("\n");
+        }
+        
+        if(executeTBWForSocialNetwork)
+        {
+            writer.append("Total Cost \t");
+            writer.append(totalCostForNetwork +"\n");
+        }
+    }
     
     @Override
     public String getReport() 
