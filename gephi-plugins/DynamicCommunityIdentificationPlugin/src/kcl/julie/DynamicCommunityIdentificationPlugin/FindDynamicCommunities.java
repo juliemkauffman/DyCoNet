@@ -58,7 +58,7 @@ public class FindDynamicCommunities implements Statistics
     public static double costAbsent = 1;
     public static int timeParameter = 1;
     public static double cutoffParameter = 0.4;
-    public static String chosenDirectoryString = "";
+    public static String chosenDirectoryString;
     public static final String DYNAMIC_COMMUNITY = "Dynamic Community";
     public static final String NODE_PERSISTENCE = "Node Persistence";
     int[][]  arrayOfNodeColorsAtEachTimeStep;
@@ -99,9 +99,6 @@ public class FindDynamicCommunities implements Statistics
         }
         
         nodeIdOffset = minNodeId - 1;
-        
-        //!!!!
-        System.out.println("Cut off parameter is " + cutoffParameter);
         
         GroupStructure[] groupStructure     = this.findGroupsAtEachTimeStep(graphModel, attributeModel);
         MatchedGroupGraph matchedGroupGraph = new MatchedGroupGraph(groupStructure, graphModel, timeParameter, cutoffParameter); 
@@ -423,7 +420,7 @@ public class FindDynamicCommunities implements Statistics
     //Color one individual using social cost model
     public RecursionElement colorOneIndividual(int[] arrayOfOneNodeAssociationToGroups, int nodeIndex, double timeStep)
     {
-        //System.out.println("Trying to color node " + nodeIndex);
+        System.out.println("Trying to color node " + nodeIndex);
         RecursionElement recursionElement;
         RecursionElement minRecursionElement = new RecursionElement();
         minRecursionElement.setCost(Double.MAX_VALUE);
@@ -434,7 +431,7 @@ public class FindDynamicCommunities implements Statistics
         for(int i:arrayOfOneNodeAssociationToGroups)
             groupColorsOfNode.add(i);
         
-        //System.out.println("Set of group colors for this node includes :" + groupColorsOfNode.toString());
+        System.out.println("Set of group colors for this node includes :" + groupColorsOfNode.toString());
         
         for(int currentGroupColorBeingTested:groupColorsOfNode)
         {
@@ -448,7 +445,7 @@ public class FindDynamicCommunities implements Statistics
             }
         }
         
-        //System.out.println("Calculated cost for node " + nodeIndex + " is " + minRecursionElement.getCost()+"\n");
+        System.out.println("Calculated cost for node " + nodeIndex + " is " + minRecursionElement.getCost()+"\n");
         return minRecursionElement;
     }
     
@@ -862,79 +859,83 @@ public class FindDynamicCommunities implements Statistics
 
     public void createCSVFile(String[] arrayOfNodeNames) throws IOException
     {
-        System.out.println(chosenDirectoryString);
-        String nameOfNewFile = chosenDirectoryString.concat("\\Report.csv");
-        File file = new File(nameOfNewFile);
-        file.createNewFile();
-        FileWriter writer = new FileWriter(file);
-        
-        writer.append("Timestep \t");
-        
-        for(int index = 1; index < numberOfNodes+1; index++)
+        File directory = new File(chosenDirectoryString);
+        if((chosenDirectoryString.length()!=0)&&(directory.exists()))
         {
-           writer.append(arrayOfNodeNames[index] + "\t"); 
-        }
+            String nameOfNewFile = chosenDirectoryString.concat("\\Report.csv");
+            File file = new File(nameOfNewFile);
+            file.createNewFile();
+            FileWriter writer = new FileWriter(file);
         
-        writer.append("\n");
+            writer.append("Timestep \t");
         
-        for(int timeStep = (int)timeBegin; timeStep<(int)timeEnd; timeStep++)
-        {
-            writer.append(timeStep + "\t");
-            for(int i=1; i < numberOfNodes+1; i++)
+            for(int index = 1; index < numberOfNodes+1; index++)
             {
-                int colorOfNode = arrayOfNodeColorsAtEachTimeStep[i][timeStep];
-                int colorOfGroup = arrayOfGroupColorsForAllNodes[i][timeStep];
-                if(colorOfNode == colorOfGroup)
-                    writer.append(colorOfNode + "\t");
-                else if(colorOfGroup==0)
+                writer.append(arrayOfNodeNames[index] + "\t"); 
+            }
+        
+            writer.append("\n");
+        
+            for(int timeStep = (int)timeBegin; timeStep<(int)timeEnd; timeStep++)
+            {
+                writer.append(timeStep + "\t");
+                for(int i=1; i < numberOfNodes+1; i++)
                 {
-                    writer.append("(" + colorOfNode + ", - )\t");
-                }else                
-                    writer.append("(" + colorOfNode + "," + colorOfGroup + ")\t");
+                    int colorOfNode = arrayOfNodeColorsAtEachTimeStep[i][timeStep];
+                    int colorOfGroup = arrayOfGroupColorsForAllNodes[i][timeStep];
+                    if(colorOfNode == colorOfGroup)
+                        writer.append(colorOfNode + "\t");
+                    else if(colorOfGroup==0)
+                        writer.append("(" + colorOfNode + ", - )\t");
+                    else                
+                        writer.append("(" + colorOfNode + "," + colorOfGroup + ")\t");
+                }
+                writer.append("\n");
             }
-            writer.append("\n");
-        }
         
-        //When using cost model
-        if(executeTBWForSocialNetwork)
-        {
-            writer.append("Cost\t");
-            for(int index=1; index < arrayOfIndividualNodeCosts.length; index++)
+            //When using cost model
+            if(executeTBWForSocialNetwork)
             {
-                writer.append(arrayOfIndividualNodeCosts[index] + "\t");
+                writer.append("Cost\t");
+                for(int index=1; index < arrayOfIndividualNodeCosts.length; index++)
+                {
+                    writer.append(arrayOfIndividualNodeCosts[index] + "\t");
+                }
+                writer.append("\n");
             }
-            writer.append("\n");
-        }
 
-        //When not using cost model
-        else
-        {
-            writer.append("# of nodes\t");
-            for(int indx = 1; indx < numberOfNodes+1; indx++)
+            //When not using cost model
+            else
             {
-                Boolean sameCommunityAlways = Boolean.TRUE;
-                for(int ts = (int) timeBegin + 1; ts < (int)timeEnd; ts++)
+                writer.append("# of nodes\t");
+                for(int indx = 1; indx < numberOfNodes+1; indx++)
                 {
-                    if(arrayOfNodeColorsAtEachTimeStep[indx][ts]!=arrayOfNodeColorsAtEachTimeStep[indx][(int)timeBegin])
-                        sameCommunityAlways=Boolean.FALSE;
-     
+                    Boolean sameCommunityAlways = Boolean.TRUE;
+                    for(int ts = (int) timeBegin + 1; ts < (int)timeEnd; ts++)
+                    {
+                        if(arrayOfNodeColorsAtEachTimeStep[indx][ts]!=arrayOfNodeColorsAtEachTimeStep[indx][(int)timeBegin])
+                            sameCommunityAlways=Boolean.FALSE;
+                    }
+                    if(sameCommunityAlways)
+                    {
+                        int groupNumber = arrayOfNodeColorsAtEachTimeStep[indx][1];
+                        int numInCommunity = numberOfNodesInEachCommunity[groupNumber];
+                        writer.append(numInCommunity + "\t");
+                    }
+                    else
+                        writer.append("- \t");
                 }
-                if(sameCommunityAlways)
-                {
-                    int groupNumber = arrayOfNodeColorsAtEachTimeStep[indx][1];
-                    int numInCommunity = numberOfNodesInEachCommunity[groupNumber];
-                    writer.append(numInCommunity + "\t");
-                }
-                else
-                    writer.append("- \t");
+                writer.append("\n");
             }
-            writer.append("\n");
-        }
         
-        if(executeTBWForSocialNetwork)
-        {
-            writer.append("Total Cost \t");
-            writer.append(totalCostForNetwork +"\n");
+            if(executeTBWForSocialNetwork)
+            {
+                writer.append("Total Cost \t");
+                writer.append(totalCostForNetwork +"\n");
+            }
+        
+            writer.flush();
+            writer.close();
         }
     }
     
