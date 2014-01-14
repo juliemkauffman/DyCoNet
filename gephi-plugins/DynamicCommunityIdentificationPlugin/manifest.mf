@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: kcl.julie.DynamicCommunityIdentificationPlugin
+OpenIDE-Module-Localizing-Bundle: kcl/julie/DynamicCommunityIdentificationPlugin/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

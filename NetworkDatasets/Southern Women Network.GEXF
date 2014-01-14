@@ -1,0 +1,996 @@
+<?xml version="1.0" encoding="UTF8"?>
+<gexf xmlns="http://www.gexf.net/1.2draft"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.gexf.net/1.2draft
+                          http://www.gexf.net/1.2draft/gexf.xsd"
+      version="1.2">
+   <meta lastmodifieddate="2013-07-09">
+      <creator>Julie Kauffman</creator>
+      <description>Southern Women Dataset</description>
+   </meta>
+   <graph mode="dynamic" defaultedgetype="undirected">
+	<nodes>
+		<node id="Evelyn" label="Evelyn">
+			<spells>
+				<spell start="2" endopen="4"/>
+				<spell start="6" endopen="9"/>
+				<spell start="10" endopen="11"/>
+				<spell start="12" endopen="14"/>
+			</spells>
+		</node>
+		<node id="Laura" label="Laura">
+			<spells>
+				<spell start="2" endopen="5"/>
+				<spell start="7" endopen="9"/>
+				<spell start="10" endopen="11"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</node>
+		<node id="Theresa" label="Theresa">
+			<spells>
+				<spell start="2" endopen="5"/>
+				<spell start="6" endopen="9"/>
+				<spell start="12" endopen="14"/>
+			</spells>
+		</node>
+		<node id="Brenda" label="Brenda">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="4" endopen="5"/>
+				<spell start="7" endopen="9"/>
+				<spell start="10" endopen="11"/>
+				<spell start="12" endopen="14"/>
+			</spells>
+		</node>
+		<node id="Charlotte" label="Charlotte">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="4" endopen="5"/>
+				<spell start="7" endopen="8"/>
+				<spell start="13" endopen="14"/>
+			</spells>
+		</node>
+		<node id="Frances" label="Frances">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="7" endopen="9"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</node>
+		<node id="Eleanor" label="Eleanor">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="4" endopen="5"/>
+				<spell start="8" endopen="9"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</node>
+		<node id="Pearl" label="Pearl">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="8" endopen="9"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</node>
+		<node id="Ruth" label="Ruth">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="4" endopen="5"/>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</node>
+		<node id="Verne" label="Verne">
+			<spells>
+				<spell start="4" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</node>
+		<node id="Myrna" label="Myrna">
+			<spells>
+				<spell start="5" endopen="7"/>
+				<spell start="9" endopen="10"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</node>
+		<node id="Katherine" label="Katherine">
+			<spells>
+				<spell start="5" endopen="7"/>
+				<spell start="9" endopen="10"/>
+				<spell start="11" endopen="13"/>
+				<spell start="14" endopen="15"/>
+			</spells>
+		</node>
+		<node id="Sylvia" label="Sylvia">
+			<spells>
+				<spell start="4" endopen="7"/>
+				<spell start="9" endopen="10"/>
+				<spell start="11" endopen="13"/>
+				<spell start="14" endopen="15"/>
+			</spells>
+		</node>
+		<node id="Nora" label="Nora">
+			<spells>
+				<spell start="1" endopen="2"/>
+				<spell start="4" endopen="7"/>
+				<spell start="8" endopen="10"/>
+				<spell start="11" endopen="12"/>
+				<spell start="14" endopen="15"/>
+			</spells>
+		</node>
+		<node id="Helen" label="Helen">
+			<spells>
+				<spell start="1" endopen="2"/>
+				<spell start="4" endopen="6"/>
+				<spell start="9" endopen="10"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</node>
+		<node id="Dorothy" label="Dorothy">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</node>
+		<node id="Olivia" label="Olivia">
+			<spells>
+				<spell start="1" endopen="2"/>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</node>
+		<node id="Flora" label="Flora">
+			<spells>
+				<spell start="1" endopen="2"/>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</node>
+	</nodes>
+	<edges>
+		<edge id="Evelyn2" source="Evelyn" target="Laura">
+			<spells>
+				<spell start="2" endopen="4"/>
+				<spell start="7" endopen="9"/>
+				<spell start="10" endopen="11"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="Evelyn3" source="Evelyn" target="Theresa">
+			<spells>
+				<spell start="2" endopen="4"/>
+				<spell start="6" endopen="9"/>
+				<spell start="12" endopen="14"/>
+			</spells>
+		</edge>
+		<edge id="Evelyn4" source="Evelyn" target="Brenda">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="7" endopen="9"/>
+				<spell start="10" endopen="11"/>
+				<spell start="12" endopen="14"/>
+			</spells>
+		</edge>
+		<edge id="Evelyn5" source="Evelyn" target="Charlotte">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="7" endopen="8"/>
+				<spell start="13" endopen="14"/>
+			</spells>
+		</edge>
+		<edge id="Evelyn6" source="Evelyn" target="Frances">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="7" endopen="9"/>
+				<spell start="12" endopen="12"/>
+			</spells>
+		</edge>
+		<edge id="Evelyn7" source="Evelyn" target="Eleanor">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="8" endopen="9"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="Evelyn8" source="Evelyn" target="Pearl">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="8" endopen="9"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="Evelyn9" source="Evelyn" target="Ruth">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="Evelyn10" source="Evelyn" target="Verne">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="Evelyn11" source="Evelyn" target="Myrna">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="Evelyn12" source="Evelyn" target="Katherine">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="Evelyn13" source="Evelyn" target="Sylvia">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="Evelyn14" source="Evelyn" target="Nora">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="8" endopen="9"/>
+			</spells>
+		</edge>
+		<edge id="Evelyn15" source="Evelyn" target="Helen">
+			<spells>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="Evelyn16" source="Evelyn" target="Dorothy">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="Evelyn17" source="Evelyn" target="Olivia">
+			<spells>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="Evelyn18" source="Evelyn" target="Flora">
+			<spells>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="23" source="Laura" target="Theresa">
+			<spells>
+				<spell start="2" endopen="5"/>
+				<spell start="7" endopen="9"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="24" source="Laura" target="Brenda">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="4" endopen="5"/>
+				<spell start="7" endopen="9"/>
+				<spell start="10" endopen="11"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="25" source="Laura" target="Charlotte">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="4" endopen="5"/>
+				<spell start="7" endopen="8"/>
+			</spells>
+		</edge>
+		<edge id="26" source="Laura" target="Frances">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="7" endopen="9"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="27" source="Laura" target="Eleanor">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="4" endopen="5"/>
+				<spell start="8" endopen="9"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="28" source="Laura" target="Pearl">
+			<spells>
+				<spell start="8" endopen="9"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="29" source="Laura" target="Ruth">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="4" endopen="5"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="210" source="Laura" target="Verne">
+			<spells>
+				<spell start="4" endopen="5"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="211" source="Laura" target="Myrna">
+			<spells>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="212" source="Laura" target="Katherine">
+			<spells>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="213" source="Laura" target="Sylvia">
+			<spells>
+				<spell start="4" endopen="5"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="214" source="Laura" target="Nora">
+			<spells>
+				<spell start="4" endopen="5"/>
+				<spell start="8" endopen="9"/>
+			</spells>
+		</edge>
+		<edge id="215" source="Laura" target="Helen">
+			<spells>
+				<spell start="4" endopen="5"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="216" source="Laura" target="Dorothy">
+			<spells>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="34" source="Theresa" target="Brenda">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="4" endopen="5"/>
+				<spell start="7" endopen="9"/>
+				<spell start="12" endopen="14"/>
+			</spells>
+		</edge>
+		<edge id="35" source="Theresa" target="Charlotte">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="4" endopen="5"/>
+				<spell start="7" endopen="8"/>
+				<spell start="13" endopen="14"/>
+			</spells>
+		</edge>
+		<edge id="36" source="Theresa" target="Frances">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="7" endopen="9"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="37" source="Theresa" target="Eleanor">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="4" endopen="5"/>
+				<spell start="8" endopen="9"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="38" source="Theresa" target="Pearl">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="8" endopen="9"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="39" source="Theresa" target="Ruth">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="4" endopen="5"/>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="310" source="Theresa" target="Verne">
+			<spells>
+				<spell start="4" endopen="5"/>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="311" source="Theresa" target="Myrna">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="312" source="Theresa" target="Katherine">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="313" source="Theresa" target="Sylvia">
+			<spells>
+				<spell start="4" endopen="5"/>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="314" source="Theresa" target="Nora">
+			<spells>
+				<spell start="4" endopen="5"/>
+				<spell start="6" endopen="7"/>
+				<spell start="8" endopen="9"/>
+			</spells>
+		</edge>
+		<edge id="315" source="Theresa" target="Helen">
+			<spells>
+				<spell start="4" endopen="5"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="316" source="Theresa" target="Dorothy">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="317" source="Theresa" target="Olivia">
+			<spells>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="318" source="Theresa" target="Flora">
+			<spells>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="45" source="Brenda" target="Charlotte">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="4" endopen="5"/>
+				<spell start="7" endopen="8"/>
+				<spell start="13" endopen="14"/>
+			</spells>
+		</edge>
+		<edge id="46" source="Brenda" target="Frances">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="7" endopen="9"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="47" source="Brenda" target="Eleanor">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="4" endopen="5"/>
+				<spell start="8" endopen="9"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="48" source="Brenda" target="Pearl">
+			<spells>
+				<spell start="8" endopen="9"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="49" source="Brenda" target="Ruth">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="4" endopen="5"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="410" source="Brenda" target="Verne">
+			<spells>
+				<spell start="4" endopen="5"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="411" source="Brenda" target="Myrna">
+			<spells>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="412" source="Brenda" target="Katherine">
+			<spells>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="413" source="Brenda" target="Sylvia">
+			<spells>
+				<spell start="4" endopen="5"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="414" source="Brenda" target="Nora">
+			<spells>
+				<spell start="4" endopen="5"/>
+				<spell start="8" endopen="9"/>
+			</spells>
+		</edge>
+		<edge id="415" source="Brenda" target="Helen">
+			<spells>
+				<spell start="4" endopen="9"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="416" source="Brenda" target="Dorothy">
+			<spells>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="56" source="Charlotte" target="Frances">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="7" endopen="8"/>
+			</spells>
+		</edge>
+		<edge id="57" source="Charlotte" target="Eleanor">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="4" endopen="5"/>
+			</spells>
+		</edge>
+		<edge id="59" source="Charlotte" target="Ruth">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="4" endopen="5"/>
+			</spells>
+		</edge>
+		<edge id="510" source="Charlotte" target="Verne">
+			<spells>
+				<spell start="4" endopen="5"/>
+			</spells>
+		</edge>
+		<edge id="513" source="Charlotte" target="Sylvia">
+			<spells>
+				<spell start="4" endopen="5"/>
+			</spells>
+		</edge>
+		<edge id="514" source="Charlotte" target="Nora">
+			<spells>
+				<spell start="4" endopen="5"/>
+			</spells>
+		</edge>
+		<edge id="515" source="Charlotte" target="Helen">
+			<spells>
+				<spell start="4" endopen="5"/>
+			</spells>
+		</edge>
+		<edge id="67" source="Frances" target="Eleanor">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="8" endopen="9"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="68" source="Frances" target="Pearl">
+			<spells>
+				<spell start="8" endopen="9"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="69" source="Frances" target="Ruth">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="610" source="Frances" target="Verne">
+			<spells>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="611" source="Frances" target="Myrna">
+			<spells>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="612" source="Frances" target="Katherine">
+			<spells>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="613" source="Frances" target="Sylvia">
+			<spells>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="614" source="Frances" target="Nora">
+			<spells>
+				<spell start="8" endopen="9"/>
+			</spells>
+		</edge>
+		<edge id="615" source="Frances" target="Helen">
+			<spells>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="616" source="Frances" target="Dorothy">
+			<spells>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="78" source="Eleanor" target="Pearl">
+			<spells>
+				<spell start="8" endopen="9"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="79" source="Eleanor" target="Ruth">
+			<spells>
+				<spell start="2" endopen="3"/>
+				<spell start="4" endopen="5"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="710" source="Eleanor" target="Verne">
+			<spells>
+				<spell start="4" endopen="5"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="711" source="Eleanor" target="Myrna">
+			<spells>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="712" source="Eleanor" target="Katherine">
+			<spells>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="713" source="Eleanor" target="Sylvia">
+			<spells>
+				<spell start="4" endopen="5"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="714" source="Eleanor" target="Nora">
+			<spells>
+				<spell start="4" endopen="5"/>
+				<spell start="8" endopen="9"/>
+			</spells>
+		</edge>
+		<edge id="715" source="Eleanor" target="Helen">
+			<spells>
+				<spell start="4" endopen="5"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="716" source="Eleanor" target="Dorothy">
+			<spells>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="89" source="Pearl" target="Ruth">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="810" source="Pearl" target="Verne">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="811" source="Pearl" target="Myrna">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="812" source="Pearl" target="Katherine">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="813" source="Pearl" target="Sylvia">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="814" source="Pearl" target="Nora">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="8" endopen="9"/>
+			</spells>
+		</edge>
+		<edge id="815" source="Pearl" target="Helen">
+			<spells>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="816" source="Pearl" target="Dorothy">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="817" source="Pearl" target="Olivia">
+			<spells>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="818" source="Pearl" target="Flora">
+			<spells>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="910" source="Ruth" target="Verne">
+			<spells>
+				<spell start="4" endopen="5"/>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="911" source="Ruth" target="Myrna">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="912" source="Ruth" target="Katherine">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="913" source="Ruth" target="Sylvia">
+			<spells>
+				<spell start="4" endopen="5"/>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="914" source="Ruth" target="Nora">
+			<spells>
+				<spell start="4" endopen="5"/>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="915" source="Ruth" target="Helen">
+			<spells>
+				<spell start="4" endopen="5"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="916" source="Ruth" target="Dorothy">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="917" source="Ruth" target="Olivia">
+			<spells>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="918" source="Ruth" target="Flora">
+			<spells>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="1011" source="Verne" target="Myrna">
+			<spells>
+				<spell start="5" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="1012" source="Verne" target="Katherine">
+			<spells>
+				<spell start="5" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="1013" source="Verne" target="Sylvia">
+			<spells>
+				<spell start="4" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="1014" source="Verne" target="Nora">
+			<spells>
+				<spell start="4" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="1015" source="Verne" target="Helen">
+			<spells>
+				<spell start="4" endopen="6"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="1016" source="Verne" target="Dorothy">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="1017" source="Verne" target="Olivia">
+			<spells>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="1018" source="Verne" target="Flora">
+			<spells>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="1112" source="Myrna" target="Katherine">
+			<spells>
+				<spell start="5" endopen="7"/>
+				<spell start="9" endopen="10"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="1113" source="Myrna" target="Sylvia">
+			<spells>
+				<spell start="5" endopen="7"/>
+				<spell start="9" endopen="10"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="1114" source="Myrna" target="Nora">
+			<spells>
+				<spell start="5" endopen="7"/>
+				<spell start="9" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="1115" source="Myrna" target="Helen">
+			<spells>
+				<spell start="5" endopen="6"/>
+				<spell start="9" endopen="10"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="1116" source="Myrna" target="Dorothy">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="1117" source="Myrna" target="Olivia">
+			<spells>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="1118" source="Myrna" target="Flora">
+			<spells>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="1213" source="Katherine" target="Sylvia">
+			<spells>
+				<spell start="5" endopen="7"/>
+				<spell start="9" endopen="10"/>
+				<spell start="11" endopen="13"/>
+				<spell start="14" endopen="15"/>
+			</spells>
+		</edge>
+		<edge id="1214" source="Katherine" target="Nora">
+			<spells>
+				<spell start="5" endopen="7"/>
+				<spell start="9" endopen="10"/>
+				<spell start="11" endopen="12"/>
+				<spell start="14" endopen="15"/>
+			</spells>
+		</edge>
+		<edge id="1215" source="Katherine" target="Helen">
+			<spells>
+				<spell start="5" endopen="6"/>
+				<spell start="9" endopen="10"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="1216" source="Katherine" target="Dorothy">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="1217" source="Katherine" target="Olivia">
+			<spells>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="1218" source="Katherine" target="Flora">
+			<spells>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="1314" source="Sylvia" target="Nora">
+			<spells>
+				<spell start="4" endopen="7"/>
+				<spell start="9" endopen="10"/>
+				<spell start="11" endopen="12"/>
+				<spell start="14" endopen="15"/>
+			</spells>
+		</edge>
+		<edge id="1315" source="Sylvia" target="Helen">
+			<spells>
+				<spell start="4" endopen="6"/>
+				<spell start="9" endopen="10"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="1316" source="Sylvia" target="Dorothy">
+			<spells>
+				<spell start="6" endopen="7"/>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="1317" source="Sylvia" target="Olivia">
+			<spells>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="1318" source="Sylvia" target="Flora">
+			<spells>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="1415" source="Nora" target="Helen">
+			<spells>
+				<spell start="1" endopen="2"/>
+				<spell start="4" endopen="6"/>
+				<spell start="9" endopen="10"/>
+			</spells>
+		</edge>
+		<edge id="1416" source="Nora" target="Dorothy">
+			<spells>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="1417" source="Nora" target="Olivia">
+			<spells>
+				<spell start="1" endopen="2"/>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="1418" source="Nora" target="Flora">
+			<spells>
+				<spell start="1" endopen="2"/>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="1516" source="Helen" target="Dorothy">
+			<spells>
+				<spell start="12" endopen="13"/>
+			</spells>
+		</edge>
+		<edge id="1517" source="Helen" target="Olivia">
+			<spells>
+				<spell start="1" endopen="2"/>
+			</spells>
+		</edge>
+		<edge id="1518" source="Helen" target="Flora">
+			<spells>
+				<spell start="1" endopen="2"/>
+			</spells>
+		</edge>
+		<edge id="1617" source="Dorothy" target="Olivia">
+			<spells>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="1618" source="Dorothy" target="Flora">
+			<spells>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+		<edge id="1718" source="Olivia" target="Flora">
+			<spells>
+				<spell start="1" endopen="2"/>
+				<spell start="6" endopen="7"/>
+			</spells>
+		</edge>
+	</edges>
+    </graph>
+</gexf>
+
+
